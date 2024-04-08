@@ -120,21 +120,22 @@ function template_footer()
               <p>We supply modern home, office, and kitchen furniture at the best price in town. Quality guaranteed.</p>
           </div>
           <div class="footer-section links">
-              <h3>HELP</h3>
+              <h3>Customer Support</h3>
               <ul>
-                  <li><a href="#">Sign in</a></li>
-                  <li><a href="#">Create account</a></li>
+                  <li><a href="index.php?page=cart">Sign in</a></li>
+                  <li><a href="index.php?page=cart">Create account</a></li>
                   <li><a href="#">Account details</a></li>
-                  <li><a href="#">Order status</a></li>
+            
               </ul>
           </div>
           <div class="footer-section links">
-              <h3>COMPANY</h3>
+              <h3>Customer Service</h3>
               <ul>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Delivery Policy</a></li>
-                  <li><a href="#">Terms & Conditions</a></li>
-                  <li><a href="#">Refund Returns Policy</a></li>
+                  <li><a href="index.php?page=public/docs/privacy">Privacy Policy</a></li>
+                  <li><a href="index.php?page=public/docs/delivery">Delivery Policy</a></li>
+                  <li><a href="index.php?page=public/docs/paypolicy">Payment Policy</a></li>
+                  <li><a href="index.php?page=public/docs/terms_cond">Terms & Conditions</a></li>
+                  
               </ul>
           </div>
           

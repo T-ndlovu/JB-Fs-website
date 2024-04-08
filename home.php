@@ -217,13 +217,15 @@ $displayedProductIDs = []; // Initialize the array to track displayed product ID
         </p>
         <div class="md:space-y-2">
             <h2 class="font-semibold">Our address</h2>
-            <p>6th Ave, NY, 10001 USA</p>
-            <a href="#"> Get directions </a>
+            <p>dr and, C/O Sefako Makgatho, Dr Van Der Merwe Rd, Montana, Pretoria, 0182</p>
+            <a
+                href="https://www.google.com/maps/dir/-25.7032192,28.1378816/jb+furniture+auction/@-25.671732,28.1604163,13z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x1ebfdfe6b76bb129:0xf7487328f9c53ce6!2m2!1d28.2492205!2d-25.6775164?entry=ttu">
+                Get directions </a>
         </div>
         <div class="md:space-y-2">
             <h2 class="font-semibold">Contact info</h2>
             <p>
-                +1-556-777-123-4 <br />
+                068 561 3608 <br />
                 email@example.com
             </p>
         </div>

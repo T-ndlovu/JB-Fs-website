@@ -161,7 +161,7 @@ if ($products_in_cart) {
                 <?php if (isset($_SESSION['user_id'])) { ?>
                     <input type="submit" value="Check Out" name="placeorder">
                 <?php } ?>
-                <?php var_dump($_SESSION); ?>
+                <!--?php var_dump($_SESSION); ?-->
 
             </div>
 
