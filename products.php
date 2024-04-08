@@ -63,7 +63,7 @@
         }
     }
 </style>
-</head>
+
 
 <body>
     <?php
