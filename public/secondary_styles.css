@@ -78,29 +78,6 @@ img {
   opacity: 1;
 }
 
-/*product descripion & rside*/
-
-/*productss page*/
-.category-header {
-  background-image: url("images/coffee_table.webp");
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  color: white; /* Set text color to white for better visibility */
-  padding: 50px 0; /* Add some padding for spacing */
-}
-
-.category-title {
-  font-size: 36px; /* Adjust the font size as needed */
-  margin: 0; /* Remove default margin */
-}
-
-.pro {
-  display: inline-flex;
-  width: 230px; /* Adjust width to fit within container */
-  margin-right: 10px;
-}
-
 /*Cart page */
 * {
   box-sizing: border-box;

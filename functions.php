@@ -16,6 +16,7 @@ function template_header($title)
     <link rel="stylesheet" href="public/output.css"/>
     <link rel="stylesheet" href="public/style.css"/>
     <link rel="stylesheet" href="public/secondary_styles.css"/>
+    <link rel="stylesheet" href="public/extra.css"/>
     <link rel="stylesheet" href="public/footer.css"/>
 	</head>
 	<body>
@@ -143,6 +144,7 @@ function template_footer()
   </footer>
         <script src="public/script.js"></script>
         <script src="public/product.js"></script>
+        <script src="public/filter.js"></script>
     </body>
 </html>
 EOT;

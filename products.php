@@ -1,71 +1,3 @@
-<style>
-    /* Your CSS styles here */
-    .individual-product {
-        margin: 0 auto;
-        margin-bottom: 20px;
-        width: 400px;
-        aspect-ratio: 5/4;
-    }
-
-    .individual-product img {
-        border-radius: 8px;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        max-height: 450px;
-        max-width: 600px;
-    }
-
-    .individual-product img {
-        margin: 0 auto;
-    }
-
-    .products {
-        padding: 2%;
-        max-width: 1236px;
-        margin: 0 auto;
-    }
-
-    .products h1 {
-        padding: 2%;
-    }
-
-    .products p,
-    .product-details {
-        text-align: center;
-    }
-
-    .product-name {
-        font-size: large;
-    }
-
-    .product-price {
-        font-size: large;
-        font-weight: bold;
-    }
-
-    @media (min-width: 1068px) {
-        .individual-product img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .individual-product {
-            width: 400px;
-            aspect-ratio: 5/4;
-        }
-
-        .listed-products {
-            display: grid;
-            grid-template-rows: 1fr 1fr;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-        }
-    }
-</style>
-
-
-
 <?php
 require_once "includes/dbh.inc.php";
 
@@ -76,7 +8,7 @@ function sanitize($data)
 }
 
 // Fetching products for the current page
-$num_products_on_each_page = 5;
+$num_products_on_each_page = 10;
 $current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int) $_GET['p'] : 1;
 $offset = ($current_page - 1) * $num_products_on_each_page;
 
@@ -134,84 +66,106 @@ $total_products = $total_products_stmt->fetchColumn();
 ?>
 
 <?= template_header('Products') ?>
-<section style="padding-top:10px">
-    <!-- Your section content here -->
-</section>
-
-<div class="card-body">
-    <div class="row">
-        <div class="col-md-7">
-            <!-- Search form -->
-            <form action="index.php" method="GET">
-                <input type="hidden" name="page" value="products">
-                <div class="input-group mb-3">
-                    <input type="text" name="search" required
-                        value="<?= isset($_GET['search']) ? sanitize($_GET['search']) : '' ?>" class="form-control"
-                        placeholder="Search data">
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div class="filter-section">
-    <!-- Filter form -->
-    <div class="filter-form">
+<section style="padding-top:60px">
+    <div class="searchform">
+        <!-- Search form -->
         <form action="index.php" method="GET">
             <input type="hidden" name="page" value="products">
-            <div class="filter-inputs">
-                <div class="filter-input">
-                    <label for="start_price">Min Price: </label>
-                    <input type="text" name="start_price" id="start_price"
-                        value="<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '100' ?>"
-                        class="start_price">
-                </div>
-                <div class="filter-input">
-                    <label for="end_price">Max Price: </label>
-                    <input type="text" name="end_price" id="end_price"
-                        value="<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '900' ?>"
-                        class="end_price">
-                </div>
-                <div class="filter-input">
-                    <button type="submit" class="btn btn-primary">Filter</button>
-                </div>
+            <div class="input-group mb-3">
+                <input type="text" name="search" required
+                    value="<?= isset($_GET['search']) ? sanitize($_GET['search']) : '' ?>" class="form-control"
+                    placeholder="Search data">
+                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="button" class="btn btn-secondary" onclick="resetSearch()">Clear</button>
             </div>
         </form>
     </div>
 
-    <!-- Listed products -->
-    <div class="listed-products">
-        <?php
-        if ($stmt->rowCount() > 0) {
-            foreach ($products as $product) {
-                // Fetch the first image for each product
-                $sql_image = "SELECT * FROM productimage WHERE ProductID = :product_id LIMIT 1";
-                $stmt_image = $pdo->prepare($sql_image);
-                $stmt_image->execute(['product_id' => $product['ProductID']]);
-                $image = $stmt_image->fetch(PDO::FETCH_ASSOC);
-                ?>
-                <div class="individual-product">
-                    <a href="index.php?page=product&id=<?= $product['ProductID'] ?>">
-                        <img src="<?= $image['ImageURL']; ?>" alt="<?= $product['Name'] ?>" class="product-image">
-                    </a>
-                    <div class="product-details">
-                        <span class="product-name">
-                            <?= $product['Name'] ?> for
-                        </span>
-                        <span class="product-price">
-                            <?= $product['Price'] ?>
-                        </span>
+
+    <div class="filter-section">
+        <!-- Filter form -->
+        <div class="custom-wrapper">
+            <div class="filter-form">
+                <form action="index.php" method="GET">
+                    <input type="hidden" name="page" value="products">
+
+                    <input type="hidden" name="search"
+                        value="<?= isset($_GET['search']) ? sanitize($_GET['search']) : '' ?>">
+
+                    <div class="filter-inputs price-input-container">
+                        <div class="price-input">
+                            <div class="filter-input price-field ">
+                                <span>Minimum Price R:</span>
+                                <input type="number" name="start_price" id="start_price"
+                                    value="<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '2500' ?>"
+                                    class="start_price min-input">
+                            </div>
+
+
+                            <div class="filter-input price-field">
+                                <span>Maximum Price R:</span>
+                                <input type="text" name="end_price" id="end_price"
+                                    value="<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '8500' ?>"
+                                    class="end_price max-input">
+                            </div>
+
+                            <div class="filter-input">
+                                <button type="submit" class="btn btn-primary">Filter</button>
+                                <button type="button" class="btn btn-secondary" onclick="resetFilters()">Reset</button>
+                            </div>
+                        </div>
+                        <div class="slider-container">
+                            <div class="price-slider">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <?php
+                    <div class="range-input">
+                        <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
+                        <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Listed products -->
+        <div class="listed-products">
+            <?php
+            if ($stmt->rowCount() > 0) {
+                foreach ($products as $product) {
+                    // Fetch the first image for each product
+                    $sql_image = "SELECT * FROM productimage WHERE ProductID = :product_id LIMIT 1";
+                    $stmt_image = $pdo->prepare($sql_image);
+                    $stmt_image->execute(['product_id' => $product['ProductID']]);
+                    $image = $stmt_image->fetch(PDO::FETCH_ASSOC);
+                    ?>
+                    <div class="individual-product">
+                        <a href="index.php?page=product&id=<?= $product['ProductID'] ?>">
+                            <img src="<?= $image['ImageURL']; ?>" alt="<?= $product['Name'] ?>" class="product-image">
+                        </a>
+                        <div class="product-details">
+                            <span class="product-name">
+                                <?= $product['Name'] ?> for
+                            </span>
+                            <span class="product-price">
+                                <?= $product['Price'] ?>
+                            </span>
+                        </div>
+                    </div>
+                    <?php
+                }
+            } else {
+                echo "<div class='col-md-12'><p>No Record Found</p></div>";
             }
-        } else {
-            echo "<div class='col-md-12'><p>No Record Found</p></div>";
-        }
-        ?>
+            ?>
+        </div>
     </div>
-</div>
+</section>
+
+
 
 <!-- Pagination buttons -->
 <div class="buttons">
