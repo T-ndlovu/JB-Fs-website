@@ -74,16 +74,48 @@ $total_products = $total_products_stmt->fetchColumn();
             <div class="input-group mb-3">
                 <input type="text" name="search" required
                     value="<?= isset($_GET['search']) ? sanitize($_GET['search']) : '' ?>" class="form-control"
-                    placeholder="Search data">
+                    placeholder="Search Product...">
                 <button type="submit" class="btn btn-primary">Search</button>
                 <button type="button" class="btn btn-secondary" onclick="resetSearch()">Clear</button>
             </div>
         </form>
     </div>
 
+    <style>
+        .btn-primary {
+            display: inline-block;
+            text-decoration: none;
+            margin-left: 5px;
+            padding: 8px 20px;
+            border: 0;
+            background: #e2a001;
+            color: #ffffff;
+            font-size: 14px;
+
+            border-radius: 5px;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            text-decoration: none;
+            margin-left: 5px;
+            padding: 8px 20px;
+            border: 0;
+            background: #e4e4e4;
+            color: #000000;
+            font-size: 14px;
+
+            border-radius: 5px;
+        }
+
+        .topsection {
+            background-color: red;
+        }
+    </style>
 
     <div class="filter-section">
         <!-- Filter form -->
+
         <div class="custom-wrapper">
             <div class="filter-form">
                 <form action="index.php" method="GET">
@@ -109,10 +141,7 @@ $total_products = $total_products_stmt->fetchColumn();
                                     class="end_price max-input">
                             </div>
 
-                            <div class="filter-input">
-                                <button type="submit" class="btn btn-primary">Filter</button>
-                                <button type="button" class="btn btn-secondary" onclick="resetFilters()">Reset</button>
-                            </div>
+
                         </div>
                         <div class="slider-container">
                             <div class="price-slider">
@@ -122,6 +151,10 @@ $total_products = $total_products_stmt->fetchColumn();
                     <div class="range-input">
                         <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
                         <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
+                    </div>
+                    <div class="filter-input" style="padding-top:20px">
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                        <button type="button" class="btn btn-secondary" onclick="resetFilters()">Reset</button>
                     </div>
                 </form>
             </div>
