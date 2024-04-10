@@ -65,6 +65,7 @@ $total_products_stmt = $pdo->query('SELECT COUNT(*) FROM product');
 $total_products = $total_products_stmt->fetchColumn();
 ?>
 
+<title>Product | JB Furniture House</title>
 <?= template_header('Products') ?>
 <section style="padding-top:60px">
     <div class="searchform">
@@ -72,9 +73,7 @@ $total_products = $total_products_stmt->fetchColumn();
         <form action="index.php" method="GET">
             <input type="hidden" name="page" value="products">
             <div class="input-group mb-3">
-                <input type="text" name="search" required
-                    value="<?= isset($_GET['search']) ? sanitize($_GET['search']) : '' ?>" class="form-control"
-                    placeholder="Search Product...">
+                <input type="text" name="search" required value="<?= isset($_GET['search']) ? sanitize($_GET['search']) : '' ?>" class="form-control" placeholder="Search Product...">
                 <button type="submit" class="btn btn-primary">Search</button>
                 <button type="button" class="btn btn-secondary" onclick="resetSearch()">Clear</button>
             </div>
@@ -121,24 +120,19 @@ $total_products = $total_products_stmt->fetchColumn();
                 <form action="index.php" method="GET">
                     <input type="hidden" name="page" value="products">
 
-                    <input type="hidden" name="search"
-                        value="<?= isset($_GET['search']) ? sanitize($_GET['search']) : '' ?>">
+                    <input type="hidden" name="search" value="<?= isset($_GET['search']) ? sanitize($_GET['search']) : '' ?>">
 
                     <div class="filter-inputs price-input-container">
                         <div class="price-input">
                             <div class="filter-input price-field ">
                                 <span>Minimum Price R:</span>
-                                <input type="number" name="start_price" id="start_price"
-                                    value="<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '2500' ?>"
-                                    class="start_price min-input">
+                                <input type="number" name="start_price" id="start_price" value="<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '2500' ?>" class="start_price min-input">
                             </div>
 
 
                             <div class="filter-input price-field">
                                 <span>Maximum Price R:</span>
-                                <input type="text" name="end_price" id="end_price"
-                                    value="<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '8500' ?>"
-                                    class="end_price max-input">
+                                <input type="text" name="end_price" id="end_price" value="<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '8500' ?>" class="end_price max-input">
                             </div>
 
 
@@ -174,7 +168,7 @@ $total_products = $total_products_stmt->fetchColumn();
                     $stmt_image = $pdo->prepare($sql_image);
                     $stmt_image->execute(['product_id' => $product['ProductID']]);
                     $image = $stmt_image->fetch(PDO::FETCH_ASSOC);
-                    ?>
+            ?>
                     <div class="individual-product">
                         <a href="index.php?page=product&id=<?= $product['ProductID'] ?>">
                             <img src="<?= $image['ImageURL']; ?>" alt="<?= $product['Name'] ?>" class="product-image">
@@ -188,7 +182,7 @@ $total_products = $total_products_stmt->fetchColumn();
                             </span>
                         </div>
                     </div>
-                    <?php
+            <?php
                 }
             } else {
                 echo "<div class='col-md-12'><p>No Record Found</p></div>";
@@ -202,14 +196,12 @@ $total_products = $total_products_stmt->fetchColumn();
 
 <!-- Pagination buttons -->
 <div class="buttons">
-    <?php if ($current_page > 1 && count($products) > 0): ?>
-        <a
-            href="index.php?page=products&p=<?= $current_page - 1 ?>&start_price=<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '100' ?>&end_price=<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '900' ?>">Prev</a>
+    <?php if ($current_page > 1 && count($products) > 0) : ?>
+        <a href="index.php?page=products&p=<?= $current_page - 1 ?>&start_price=<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '100' ?>&end_price=<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '900' ?>">Prev</a>
     <?php endif; ?>
 
-    <?php if (count($products) > 0 && count($products) == $num_products_on_each_page): ?>
-        <a
-            href="index.php?page=products&p=<?= $current_page + 1 ?>&start_price=<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '100' ?>&end_price=<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '900' ?>">Next</a>
+    <?php if (count($products) > 0 && count($products) == $num_products_on_each_page) : ?>
+        <a href="index.php?page=products&p=<?= $current_page + 1 ?>&start_price=<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '100' ?>&end_price=<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '900' ?>">Next</a>
     <?php endif; ?>
 </div>
 
