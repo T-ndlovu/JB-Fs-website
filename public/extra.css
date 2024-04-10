@@ -151,8 +151,8 @@ input[type="range"]::-webkit-slider-thumb {
 
 .individual-product {
   margin: 0 auto;
-  margin-bottom: 20px;
-  width: 400px;
+  width: 30%;
+  margin-bottom: 1rem;
   aspect-ratio: 5/4;
 }
 
@@ -200,14 +200,13 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   .individual-product {
-    width: 400px;
+    width: 45%;
     aspect-ratio: 5/4;
   }
 
   .listed-products {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }
