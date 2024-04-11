@@ -1,19 +1,5 @@
 /*filter style*/
-.searchform {
-  margin: 0;
-  width: 40%;
-  padding: 0px 25px 30px;
-  position: relative;
-  left: 63px;
-}
-
-.custom-wrapper {
-  margin: 0;
-  width: 40%;
-  padding: 0px 25px 40px;
-  position: relative;
-  left: 63px;
-}
+/*! searchform and custom-wrapper moved to in-line CSS in products.php */
 
 /* Styles for the price input container */
 .price-input-container {

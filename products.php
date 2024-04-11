@@ -65,22 +65,30 @@ $total_products_stmt = $pdo->query('SELECT COUNT(*) FROM product');
 $total_products = $total_products_stmt->fetchColumn();
 ?>
 
-<title>Product | JB Furniture House</title>
+<title>Products | JB Furniture House</title>
 <?= template_header('Products') ?>
-<section style="padding-top:60px">
+<section class="products-section">
     <div class="searchform">
         <!-- Search form -->
         <form action="index.php" method="GET">
             <input type="hidden" name="page" value="products">
             <div class="input-group mb-3">
                 <input type="text" name="search" required value="<?= isset($_GET['search']) ? sanitize($_GET['search']) : '' ?>" class="form-control" placeholder="Search Product...">
-                <button type="submit" class="btn btn-primary">Search</button>
-                <button type="button" class="btn btn-secondary" onclick="resetSearch()">Clear</button>
+                <div class="">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetSearch()">Clear</button>
+                </div>
             </div>
         </form>
     </div>
 
     <style>
+        .products-section {
+            padding: 2%;
+            margin: 0 auto;
+            margin-top: 3rem;
+        }
+
         .btn-primary {
             display: inline-block;
             text-decoration: none;
@@ -109,6 +117,30 @@ $total_products = $total_products_stmt->fetchColumn();
 
         .topsection {
             background-color: red;
+        }
+
+        .form-control {
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 6px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .searchform {
+            width: 100%;
+            max-width: 600px;
+            /* padding: 0px 25px 30px; */
+            /* position: relative; */
+            /* left: 63px; */
+        }
+
+        .custom-wrapper {
+            width: 100%;
+            max-width: 600px;
+            padding: 0px 25px 40px;
+            /* position: relative; */
+            /* left: 63px; */
         }
     </style>
 
