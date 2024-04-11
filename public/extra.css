@@ -145,7 +145,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .individual-product {
   margin: 0 auto;
-  width: 35%;
+  width: 45%;
   margin-bottom: 1rem;
   aspect-ratio: 5/4;
 }
