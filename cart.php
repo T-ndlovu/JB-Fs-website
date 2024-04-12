@@ -82,6 +82,7 @@ if ($products_in_cart) {
 
 <?= template_header('Cart') ?>
 
+<title>Cart | JB Furniture House</title>
 <section class="product-container">
     <div class="cart content-wrapper">
         <h1>Shopping Cart</h1>

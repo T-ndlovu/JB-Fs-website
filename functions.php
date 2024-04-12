@@ -37,7 +37,7 @@ function template_header($title)
           <div class="flex justify-around items-center space-x-4">
             <a
               class="hidden bg-black rounded-full text-white text-center py-2 px-5 lg:block"
-              href="#"
+              href="mailto:#"
             >
               Contact us
             </a>
