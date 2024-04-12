@@ -15,7 +15,8 @@ function template_header($title)
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="public/output.css"/>
     <link rel="stylesheet" href="public/style.css"/>
-    <link rel="stylesheet" href="public/secondary_styles.css"/>
+    <link rel="stylesheet" href="public/secondary-styles.css"/>
+    <link rel="stylesheet" href="public/cart.css"/>
     <link rel="stylesheet" href="public/extra.css"/>
     <link rel="stylesheet" href="public/footer.css"/>
 	</head>
@@ -36,7 +37,7 @@ function template_header($title)
           <div class="flex justify-around items-center space-x-4">
             <a
               class="hidden bg-black rounded-full text-white text-center py-2 px-5 lg:block"
-              href="#"
+              href="mailto:#"
             >
               Contact us
             </a>

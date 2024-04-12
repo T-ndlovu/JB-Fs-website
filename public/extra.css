@@ -1,19 +1,5 @@
 /*filter style*/
-.searchform {
-  margin: 0;
-  width: 40%;
-  padding: 0px 25px 30px;
-  position: relative;
-  left: 63px;
-}
-
-.custom-wrapper {
-  margin: 0;
-  width: 40%;
-  padding: 0px 25px 40px;
-  position: relative;
-  left: 63px;
-}
+/*! searchform and custom-wrapper moved to in-line CSS in products.php */
 
 /* Styles for the price input container */
 .price-input-container {
@@ -149,10 +135,18 @@ input[type="range"]::-webkit-slider-thumb {
   margin-right: 10px;
 }
 
+.listed-products {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1500px;
+}
+
 .individual-product {
   margin: 0 auto;
-  margin-bottom: 20px;
-  width: 400px;
+  width: 45%;
+  margin-bottom: 1rem;
   aspect-ratio: 5/4;
 }
 
@@ -200,14 +194,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   .individual-product {
-    width: 400px;
+    width: 30%;
     aspect-ratio: 5/4;
-  }
-
-  .listed-products {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
   }
 }

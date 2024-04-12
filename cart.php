@@ -82,6 +82,7 @@ if ($products_in_cart) {
 
 <?= template_header('Cart') ?>
 
+<title>Cart | JB Furniture House</title>
 <section class="product-container">
     <div class="cart content-wrapper">
         <h1>Shopping Cart</h1>
@@ -96,14 +97,14 @@ if ($products_in_cart) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if (empty($products)): ?>
+                    <?php if (empty($products)) : ?>
                         <tr>
                             <td colspan="5" style="text-align:center;">You have no products added in your Shopping
                                 Cart
                             </td>
                         </tr>
-                    <?php else: ?>
-                        <?php foreach ($products as $product): ?>
+                    <?php else : ?>
+                        <?php foreach ($products as $product) : ?>
                             <tr>
                                 <td class="img">
                                     <a href="index.php?page=product&id=<?= $product['ProductID'] ?>">
@@ -135,9 +136,7 @@ if ($products_in_cart) {
                                     <?= $product['Price'] ?>
                                 </td>
                                 <td class="quantity">
-                                    <input type="number" name="quantity-<?= $product['ProductID'] ?>"
-                                        value="<?= $products_in_cart[$product['ProductID']] ?>" min="1"
-                                        max="<?= $product['Quantity'] ?>" placeholder="Quantity" required>
+                                    <input type="number" name="quantity-<?= $product['ProductID'] ?>" value="<?= $products_in_cart[$product['ProductID']] ?>" min="1" max="<?= $product['Quantity'] ?>" placeholder="Quantity" required>
                                 </td>
                                 <td class="price">
                                     <?= $product['Price'] * $products_in_cart[$product['ProductID']] ?>
@@ -280,14 +279,16 @@ if ($products_in_cart) {
                         </select>
                         <input type="text" name="other_country" placeholder="Enter your country" style="display: none;">
                     </div>
-                    <script>document.querySelector('select[name="country"]').addEventListener('change', function () {
+                    <script>
+                        document.querySelector('select[name="country"]').addEventListener('change', function() {
                             var otherInput = document.querySelector('input[name="other_country"]');
                             if (this.value === 'Other') {
                                 otherInput.style.display = 'block';
                             } else {
                                 otherInput.style.display = 'none';
                             }
-                        });</script>
+                        });
+                    </script>
                     <div class="col-md-6">
                         <select name="region" class="form-control">
                             <option value="">Select your region</option>
@@ -306,14 +307,16 @@ if ($products_in_cart) {
                         </select>
                         <input type="text" name="other_region" placeholder="Enter your country" style="display: none;">
                     </div>
-                    <script>document.querySelector('select[name="region"]').addEventListener('change', function () {
+                    <script>
+                        document.querySelector('select[name="region"]').addEventListener('change', function() {
                             var otherInput = document.querySelector('input[name="other_region"]');
                             if (this.value === 'Other') {
                                 otherInput.style.display = 'block';
                             } else {
                                 otherInput.style.display = 'none';
                             }
-                        });</script>
+                        });
+                    </script>
                 </div>
             </div>
             <div class="form-group">
@@ -415,12 +418,6 @@ if ($products_in_cart) {
         }
     }
 
-    /* .form-container {
-        display: flex;
-        justify-content: space-between;
-    } */
-
-
     h2 {
         color: #e2a011;
     }
@@ -465,19 +462,6 @@ if ($products_in_cart) {
         box-sizing: border-box;
         margin-top: 5px;
     }
-
-    /* .left-half {
-        margin-top: 30px;
-        position: absolute;
-        left: 0%;
-        width: 40%;
-    } */
-
-    /* .right-half {
-        position: absolute;
-        right: 0px;
-        width: 50%;
-    } */
 
     .subtotal {
         font-size: larger;

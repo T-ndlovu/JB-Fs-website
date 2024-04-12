@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
 ?>
 
     <?= template_header('Product') ?>
-    <link rel="stylesheet" href="public/secondary_styles.css" />
+    <link rel="stylesheet" href="public/secondary-styles.css" />
     <section class="container">
         <div class="l-side">
             <div class="cont">
