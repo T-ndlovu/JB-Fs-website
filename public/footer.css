@@ -1,3 +1,7 @@
+:root {
+  --zupi-orange: #e2a001;
+}
+
 footer {
   background-color: #333;
   color: #fff;
@@ -50,9 +54,18 @@ footer {
 
 .subscribe button {
   padding: 10px 20px;
-  background-color: #e2a001;
+  background-color: var(--zupi-orange);
   color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.socials-links {
+  display: flex;
+  margin-top: 16px;
+  transition: color 0.15s ease-in-out;
+}
+.socials-links svg:hover {
+  color: var(--zupi-orange);
 }
