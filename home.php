@@ -19,8 +19,7 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
 <!-- Hero -->
 <section class="bg-custom-orange pb-24 mt-4 flex justify-center w-full sm:p-24">
     <div class="mx-auto flex flex-col lg:flex-row-reverse lg:items-center">
-        <img src="public/images/hero.webp" alt="Hero image"
-            class="aspect-5/4 w-full object-fit lg:w-[650px] lg:h-[500px] lg:ml-[-200px]" />
+        <img src="public/images/hero.webp" alt="Hero image" class="aspect-5/4 w-full object-fit lg:w-[650px] lg:h-[500px] lg:ml-[-200px]" />
         <div class="max-w-md z-10 text-center mt-[-30px] lg:mt-0 lg:text-left">
             <h1 class="text-5xl font-bold">A space only you can create.</h1>
             <p class="mb-12">
@@ -44,8 +43,7 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="items-center space-y-5 md:space-y-0 md:space-x-5 md:flex md:justify-center">
             <a href="#" class="aspect-4/5 max-w-64 mb-2 relative">
                 <div class="overflow-hidden">
-                    <img src="https://rb.gy/kvy6j3" alt="Image of a blue sofa"
-                        class="w-full h-full object-cover hover:scale-110 transition duration-150 ease-linear" />
+                    <img src="https://rb.gy/kvy6j3" alt="Image of a blue sofa" class="w-full h-full object-cover hover:scale-110 transition duration-150 ease-linear" />
                 </div>
                 <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">
                     Rugs
@@ -53,8 +51,7 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
             </a>
             <a href="#" class="aspect-4/5 max-w-64 mb-5 relative">
                 <div class="overflow-hidden">
-                    <img src="https://rb.gy/ov9ban" alt="Image of 2 coffee tables"
-                        class="w-full h-full object-cover hover:scale-110 transition duration-150 ease-linear" />
+                    <img src="https://rb.gy/ov9ban" alt="Image of 2 coffee tables" class="w-full h-full object-cover hover:scale-110 transition duration-150 ease-linear" />
                 </div>
                 <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">
                     Small Tables
@@ -62,8 +59,7 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
             </a>
             <a href="#" class="aspect-4/5 max-w-64 mb-5 relative">
                 <div class="overflow-hidden">
-                    <img src="https://rb.gy/1kqiil" alt="Image of 2 coffee tables"
-                        class="w-full h-full object-cover hover:scale-110 transition duration-150 ease-linear" />
+                    <img src="https://rb.gy/1kqiil" alt="Image of 2 coffee tables" class="w-full h-full object-cover hover:scale-110 transition duration-150 ease-linear" />
                 </div>
                 <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">
                     Couches
@@ -71,8 +67,7 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
             </a>
             <a href="#" class="aspect-4/5 max-w-64 mb-5 relative">
                 <div class="overflow-hidden">
-                    <img src="https://rb.gy/3z8wza" alt="Image of 2 coffee tables"
-                        class="w-full h-full object-cover hover:scale-110 transition duration-150 ease-linear" />
+                    <img src="https://rb.gy/3z8wza" alt="Image of 2 coffee tables" class="w-full h-full object-cover hover:scale-110 transition duration-150 ease-linear" />
                 </div>
                 <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">
                     BedRoom
@@ -146,7 +141,7 @@ $displayedProductIDs = []; // Initialize the array to track displayed product ID
             // Check if the product has already been displayed
             if (!in_array($productId, $displayedProductIDs)) {
                 $displayedProductIDs[] = $productId; // Add the product ID to the displayed list
-        
+
                 // Find the first image for this product
                 $productImage = null;
                 foreach ($productImages as $img) {
@@ -158,7 +153,7 @@ $displayedProductIDs = []; // Initialize the array to track displayed product ID
 
                 // Output product details if image found
                 if ($productImage !== null) {
-                    ?>
+        ?>
                     <a href="index.php?page=product&id=<?= $product['ProductID'] ?>" class="mb-4">
                         <div class="space-y-1">
                             <div class="relative overflow-hidden">
@@ -172,7 +167,7 @@ $displayedProductIDs = []; // Initialize the array to track displayed product ID
                             </p>
                         </div>
                     </a>
-                    <?php
+        <?php
                     $numProductsDisplayed++;
 
                     // Break the loop if 10 products are displayed
@@ -206,9 +201,7 @@ $displayedProductIDs = []; // Initialize the array to track displayed product ID
 </section>
 <!-- Location -->
 <section class="p-24 w-full md:flex md:space-x-20">
-    <img src="https://d2gt4h1eeousrn.cloudfront.net/80139779/location-BBYesn/i96LlT6-1200x1200.webp"
-        alt="Self Care Manual - Location Image"
-        class="max-w-[500px] w-11/12 aspect-square mx-auto object-cover md:aspect-4/5 md:mx-0 md:w-1/2" />
+    <img src="https://d2gt4h1eeousrn.cloudfront.net/80139779/location-BBYesn/i96LlT6-1200x1200.webp" alt="Self Care Manual - Location Image" class="max-w-[500px] w-11/12 aspect-square mx-auto object-cover md:aspect-4/5 md:mx-0 md:w-1/2" />
     <div class="space-y-5 mt-8 md:space-y-8 md:mt-16">
         <h1 class="font-bold text-2xl md:text-4xl">Location</h1>
         <p class="max-w-96">
@@ -218,8 +211,7 @@ $displayedProductIDs = []; // Initialize the array to track displayed product ID
         <div class="md:space-y-2">
             <h2 class="font-semibold">Our address</h2>
             <p>dr and, C/O Sefako Makgatho, Dr Van Der Merwe Rd, Montana, Pretoria, 0182</p>
-            <a
-                href="https://www.google.com/maps/dir/-25.7032192,28.1378816/jb+furniture+auction/@-25.671732,28.1604163,13z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x1ebfdfe6b76bb129:0xf7487328f9c53ce6!2m2!1d28.2492205!2d-25.6775164?entry=ttu">
+            <a href="https://www.google.com/maps/dir/-25.7032192,28.1378816/jb+furniture+auction/@-25.671732,28.1604163,13z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x1ebfdfe6b76bb129:0xf7487328f9c53ce6!2m2!1d28.2492205!2d-25.6775164?entry=ttu">
                 Get directions </a>
         </div>
         <div class="md:space-y-2">
