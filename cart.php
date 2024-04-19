@@ -97,14 +97,14 @@ if ($products_in_cart) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if (empty($products)) : ?>
+                    <?php if (empty($products)): ?>
                         <tr>
                             <td colspan="5" style="text-align:center;">You have no products added in your Shopping
                                 Cart
                             </td>
                         </tr>
-                    <?php else : ?>
-                        <?php foreach ($products as $product) : ?>
+                    <?php else: ?>
+                        <?php foreach ($products as $product): ?>
                             <tr>
                                 <td class="img">
                                     <a href="index.php?page=product&id=<?= $product['ProductID'] ?>">
@@ -136,7 +136,9 @@ if ($products_in_cart) {
                                     <?= $product['Price'] ?>
                                 </td>
                                 <td class="quantity">
-                                    <input type="number" name="quantity-<?= $product['ProductID'] ?>" value="<?= $products_in_cart[$product['ProductID']] ?>" min="1" max="<?= $product['Quantity'] ?>" placeholder="Quantity" required>
+                                    <input type="number" name="quantity-<?= $product['ProductID'] ?>"
+                                        value="<?= $products_in_cart[$product['ProductID']] ?>" min="1"
+                                        max="<?= $product['Quantity'] ?>" placeholder="Quantity" required>
                                 </td>
                                 <td class="price">
                                     <?= $product['Price'] * $products_in_cart[$product['ProductID']] ?>
@@ -166,10 +168,10 @@ if ($products_in_cart) {
 
     </div>
     <?php require_once 'includes/process-order.inc.php'; ?>
-    <form method="post">
+    <!--form method="post">
         <input type="submit" name="final" value="final">
 
-    </form>
+    </form-->
 
 
     <div class="register-form">
@@ -280,7 +282,7 @@ if ($products_in_cart) {
                         <input type="text" name="other_country" placeholder="Enter your country" style="display: none;">
                     </div>
                     <script>
-                        document.querySelector('select[name="country"]').addEventListener('change', function() {
+                        document.querySelector('select[name="country"]').addEventListener('change', function () {
                             var otherInput = document.querySelector('input[name="other_country"]');
                             if (this.value === 'Other') {
                                 otherInput.style.display = 'block';
@@ -308,7 +310,7 @@ if ($products_in_cart) {
                         <input type="text" name="other_region" placeholder="Enter your country" style="display: none;">
                     </div>
                     <script>
-                        document.querySelector('select[name="region"]').addEventListener('change', function() {
+                        document.querySelector('select[name="region"]').addEventListener('change', function () {
                             var otherInput = document.querySelector('input[name="other_region"]');
                             if (this.value === 'Other') {
                                 otherInput.style.display = 'block';

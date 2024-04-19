@@ -1,7 +1,7 @@
 <?= template_header('category_template') ?>
 <?php
 
-// Check if category ID is provided in URL parameters
+
 if (isset($_GET['categoryid'])) {
     $categoryId = $_GET['categoryid'];
 
@@ -14,10 +14,11 @@ if (isset($_GET['categoryid'])) {
         $productsStmt = $pdo->prepare("SELECT * FROM product WHERE CategoryID = ?");
         $productsStmt->execute([$categoryId]);
         $products = $productsStmt->fetchAll(PDO::FETCH_ASSOC);
-?>
+        ?>
         <link rel="stylesheet" href="./public/extra.css">
         <section style="padding-top:10px; padding-bottom:20px">
-            <div style="background-image: url('https://shorturl.at/qsNP0'); background-size: cover; background-position: center; text-align: center; padding: 50px 0;">
+            <div
+                style="background-image: url('https://shorturl.at/qsNP0'); background-size: cover; background-position: center; text-align: center; padding: 50px 0;">
                 <h1 style="font-size: 36px; margin: 10px;margin-bottom:10px; color:white; font-weight:bold">
                     <?php echo $category['Category_Name']; ?>
                 </h1>
@@ -25,7 +26,7 @@ if (isset($_GET['categoryid'])) {
         </section>
 
         <div class="listed-products">
-            <?php foreach ($products as $product) : ?>
+            <?php foreach ($products as $product): ?>
                 <?php
                 $sql_image = "SELECT * FROM productimage WHERE ProductID = :product_id LIMIT 1";
                 $stmt_image = $pdo->prepare($sql_image);
@@ -46,7 +47,7 @@ if (isset($_GET['categoryid'])) {
 
             <?php endforeach; ?>
         </div>
-<?php
+        <?php
     } else {
         echo "Category not found!";
     }
