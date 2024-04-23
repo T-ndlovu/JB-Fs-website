@@ -43,8 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die();
         }
 
-        create_user($pdo, $firstName, $lastName, $email, $password);
+        create_user($pdo, $firstName, $lastName, $email, $telephone, $password);
         create_user_data($pdo, $alternativeNumb, $address1, $address2, $city, $region, $postcode, $country);
+
+
         header("Location: ../index.php?page=cart&register=success");//send user to home page
 
         $pdo = null;

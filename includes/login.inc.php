@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_firstname'] = htmlspecialchars($result["FirstName"]);//might have to change or remove
 
         $_SESSION['prev_regeneration'] = time();
-        header("Location: ../index.php?page=cart&login=success");//send user to home or look at the last video to see how you can do it 
+        header("Location: ../index.php?page=cart&login=success");
         $pdo = null;
         $stmt = null;
 

@@ -55,10 +55,7 @@ if (isset($_POST['update']) && isset($_SESSION['cart'])) {
     exit;
 }
 
-if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-    header('Location: index.php?page=placeorder');
-    exit;
-}
+
 
 $products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 $products = array();
@@ -82,7 +79,7 @@ if ($products_in_cart) {
 
 <?= template_header('Cart') ?>
 
-<title>Cart | JB Furniture House</title>
+
 <section class="product-container">
     <div class="cart content-wrapper">
         <h1>Shopping Cart</h1>
@@ -160,18 +157,18 @@ if ($products_in_cart) {
             <div class="buttons">
                 <input type="submit" value="Update" name="update">
                 <?php if (isset($_SESSION['user_id'])) { ?>
-                    <input type="submit" value="Check Out" name="placeorder">
+                    <!--once loggedin info will display-->
                 <?php } ?>
-                <!--?php var_dump($_SESSION); ?-->
-
             </div>
-
     </div>
-    <?php require_once 'includes/process-order.inc.php'; ?>
-    <!--form method="post">
-        <input type="submit" name="final" value="final">
+    </form>
 
-    </form-->
+
+    <?php require_once 'includes/payfast.inc.php'; ?>
+    <?php require_once 'includes/payflex.inc.php'; ?>
+
+
+
 
 
     <div class="register-form">
@@ -356,213 +353,6 @@ if ($products_in_cart) {
         check_login_errors();
         ?>
     </div>
-
-    </form>
 </section>
-
-<style>
-    .product-container {
-        max-width: 1700px;
-        margin: 0 auto;
-        padding-bottom: 1%;
-    }
-
-    .login-form,
-    .register-form,
-    .content-wrapper {
-        margin: 0 auto;
-        margin-bottom: 2.5rem;
-        width: 50%;
-        min-width: 350px;
-        padding: 8px 20px;
-        border: 1px solid #e2a011;
-        border-radius: 10px;
-    }
-
-    .login-form h2,
-    .register-form h2 {
-        font-size: x-large;
-    }
-
-    .login-form h2 {
-        margin-bottom: 22px;
-    }
-
-    .login-form h3,
-    .register-form h3 {
-        margin-top: 22px;
-        margin-bottom: 4px;
-    }
-
-    .login-form {
-        margin-top: 1.5rem;
-    }
-
-    .content-wrapper,
-    .login-form {
-        border: 0;
-    }
-
-    @media (min-width: 1168px) {
-        .product-container {
-            margin-top: 1.75rem;
-            display: flex;
-            justify-content: space-around;
-            /* align-items: center; */
-        }
-
-        .login-form,
-        .register-form,
-        .content-wrapper {
-            margin-top: 0;
-            width: 25%;
-            margin-bottom: 0;
-        }
-    }
-
-    h2 {
-        color: #e2a011;
-    }
-
-    .form-field {
-        margin-bottom: 15px;
-    }
-
-    .pass-link,
-    .register-link {
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    input[type="submit"] {
-        background-color: #e2a011;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .btn-primary {
-        background-color: #e2a011;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .btn-primary:hover {
-        background-color: gray;
-    }
-
-    select {
-        width: 100%;
-        padding: 8px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        margin-top: 5px;
-    }
-
-    .subtotal {
-        font-size: larger;
-        color: black;
-    }
-
-    .price-info {
-        padding: 2rem 0;
-    }
-
-    .form-control {
-        width: 100%;
-        margin-bottom: 8px;
-        padding: 6px;
-        background-color: #f9f9f9;
-        border-radius: 8px;
-    }
-
-    .cart h1 {
-        display: block;
-        font-weight: normal;
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .cart table {
-        width: 100%;
-    }
-
-    .cart table thead td {
-        padding: 30px 0;
-        border-bottom: 1px solid #eeeeee;
-    }
-
-    .cart table thead td:last-child {
-        text-align: right;
-    }
-
-    .cart table tbody td {
-        padding: 20px 0;
-        border-bottom: 1px solid #eeeeee;
-    }
-
-    .cart table tbody td:last-child {
-        text-align: right;
-    }
-
-    .cart table .img {
-        width: 80px;
-    }
-
-    .cart table .remove {
-        color: #777777;
-        font-size: 12px;
-        padding-top: 3px;
-    }
-
-    .cart table .remove:hover {
-        text-decoration: underline;
-    }
-
-    .cart table .price {
-        color: #999999;
-    }
-
-    .cart table a {
-        text-decoration: none;
-        color: #555555;
-    }
-
-    .cart table input[type="number"] {
-        width: 68px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        color: #555555;
-        border-radius: 5px;
-    }
-
-    .cart .buttons {
-        text-align: right;
-        padding-bottom: 40px;
-    }
-
-    .cart .buttons input[type="submit"] {
-        margin-left: 5px;
-        padding: 12px 20px;
-        border: 0;
-        /* background: #4e5c70; */
-        background: #e2a011;
-        color: #ffffff;
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-
-    .cart .buttons input[type="submit"]:hover {
-        background: #434f61;
-    }
-</style>
 
 <?= template_footer() ?>

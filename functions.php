@@ -40,7 +40,7 @@ function template_header($title)
     </svg></button>
     <input type="hidden" name="page" value="search">
     <input type="text" name="search" placeholder="Search Product...">  
-</form>
+    </form>
 
         <a
         class="hidden bg-black rounded-full text-white text-center py-2 px-5 lg:block"

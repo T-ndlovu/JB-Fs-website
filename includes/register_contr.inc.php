@@ -32,9 +32,9 @@ function isEmailTaken(object $pdo, string $email)
     }
 }
 
-function create_user(object $pdo, string $firstName, string $lastName, string $email, string $password)
+function create_user(object $pdo, string $firstName, string $lastName, string $email, string $telephone, string $password)
 {
-    set_user($pdo, $firstName, $lastName, $email, $password);
+    set_user($pdo, $firstName, $lastName, $email, $telephone, $password);
 }
 
 function create_user_data(object $pdo, string $alternativeNumb, string $address1, string $address2, string $city, string $region, string $postcode, string $country)//will edit for other data not added
