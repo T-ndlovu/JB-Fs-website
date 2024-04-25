@@ -29,14 +29,14 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
                 goes beyond the sale, ensuring a smile-worthy experience that leaves
                 your space looking stylish and feeling functional.
             </p>
-            <a class="bg-black rounded-full text-white text-center py-2 px-3" href="#">
+            <a class="bg-black rounded-full text-white text-center py-2 px-3" href="index.php?page=products">
                 Order now
             </a>
         </div>
     </div>
 </section>
 <!-- Explore -->
-<section class="w-full p-24">
+<section class=" w-full p-24">
     <div class="max-w-3xl mx-auto">
         <h1 class="font-semibold text-center text-4xl mb-5">
             Explore our range of products.
