@@ -1,8 +1,8 @@
 <?php
 require_once "includes/dbh.inc.php";
 
-if (isset($_GET['search'])) {
-    $filtervalues = $_GET['search'];
+if (isset($_GET['p_search'])) {
+    $filtervalues = $_GET['p_search'];
 
 
     if (!empty($filtervalues)) {

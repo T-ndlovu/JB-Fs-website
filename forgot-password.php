@@ -19,7 +19,7 @@
         </form>
         <?php
         if (isset($_GET['reset'])) {
-            if ($_GET['reset'] == "sucess") {
+            if ($_GET['reset'] == "success") {
                 echo "<h3> Check your email</h3>";
             }
         }

@@ -1,4 +1,5 @@
 <?php
+
 function buyerdata($pdo)
 {
     $buyerid = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null; // Use the value of $_SESSION['user_id'] as $buyerid
@@ -28,10 +29,7 @@ function addressdata($pdo)
     $buyerid = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
     if ($buyerid !== null) {
-        $query = "SELECT customer.CustomerID, deliveryaddress.* 
-                  FROM deliveryaddress 
-                  LEFT JOIN customer ON deliveryaddress.CustomerID = customer.CustomerID 
-                  WHERE customer.CustomerID = :id;";
+        $query = "SELECT * FROM deliveryaddress WHERE CustomerID = :id;";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(":id", $buyerid);
         $stmt->execute();

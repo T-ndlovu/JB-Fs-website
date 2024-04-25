@@ -151,21 +151,30 @@ if ($products_in_cart) {
                 <span class="price">&#82;
                     <?= $subtotal ?>
                 </span>
-            </div>
 
+            </div>
             <?php $sessionId = session_id(); ?>
             <div class="buttons">
                 <input type="submit" value="Update" name="update">
-                <?php if (isset($_SESSION['user_id'])) { ?>
-                    <!--once loggedin info will display-->
-                <?php } ?>
             </div>
     </div>
-    </form>
+    <div class="price-info">
+        </form>
+        <form action="index.php?page=placeorder" method="post">
+            <input type="hidden" name="subtotal" value="<?= $subtotal ?>">
+            <input type="hidden" name="product_id[]" value="<?= $product['ProductID'] ?>">
+            <input type="hidden" name="product_name[]" value="<?= $product['Name'] ?>">
+            <input type="hidden" name="product_price[]" value="<?= $product['Price'] ?>">
 
+            <div class="buttons">
+                <?php if (isset($_SESSION['user_id'])) { ?>
+                    <input type="submit" value="Check Out">
+                <?php } ?>
+            </div>
+        </form>
+    </div>
 
-    <?php require_once 'includes/payfast.inc.php'; ?>
-    <?php require_once 'includes/payflex.inc.php'; ?>
+    <?php require_once 'includes/process-order.inc.php'; ?>
 
 
 

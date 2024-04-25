@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
     $ImageURL0 = isset($imageURLs[0]) ? $imageURLs[0] : '';
     $ImageURL1 = isset($imageURLs[1]) ? $imageURLs[1] : '';
     $ImageURL2 = isset($imageURLs[2]) ? $imageURLs[2] : '';
-?>
+    ?>
 
     <?= template_header('Product') ?>
     <link rel="stylesheet" href="public/secondary-styles.css" />
@@ -53,13 +53,16 @@ if (isset($_GET['id'])) {
 
                 <div class="rows">
                     <div class="col">
-                        <img class="demo cursor" src="<?= $ImageURL0 ?>" alt="<?= $product['Name'] ?>" onclick="currentS(1)">
+                        <img class="demo cursor" src="<?= $ImageURL0 ?>" alt="<?= $product['Name'] ?>"
+                            onclick="currentS(1)">
                     </div>
                     <div class="col">
-                        <img class="demo cursor" src="<?= $ImageURL1 ?>" alt="<?= $product['Name'] ?>" onclick="currentS(2)" a>
+                        <img class="demo cursor" src="<?= $ImageURL1 ?>" alt="<?= $product['Name'] ?>" onclick="currentS(2)"
+                            a>
                     </div>
                     <div class="col">
-                        <img class="demo cursor" src="<?= $ImageURL2 ?>" alt="<?= $product['Name'] ?>" onclick="currentS(3)">
+                        <img class="demo cursor" src="<?= $ImageURL2 ?>" alt="<?= $product['Name'] ?>"
+                            onclick="currentS(3)">
                     </div>
                 </div>
             </div>
@@ -98,13 +101,18 @@ if (isset($_GET['id'])) {
 
         <div class="r-side">
             <div class="product-content-wrapper">
+                <script async
+                    src="https://widgets.payflex.co.za/your-merchant-name/partpay-widget-0.1.2.js?type=calculator&min=50&max=400&amount=300"
+                    type="application/javascript"></script>
                 <div class="product-details">
+
                     <h1 class="product-name">
                         <?= $product['Name'] ?>
                     </h1>
                     <p class="product-price">&#82;
                         <?= $product['Price'] ?>
                     </p>
+
                 </div>
                 <form class="add-to-cart-form" action="index.php?page=cart" method="post">
                     <input type="number" name="quantity" value="1" min="1" max="<?= $product['Quantity'] ?>" required>
@@ -115,139 +123,7 @@ if (isset($_GET['id'])) {
         </div>
     </section>
 
-    <style>
-        .container {
-            padding: 10px 20px;
-            max-width: 1700px;
-            margin: 0px auto;
-        }
 
-        .cont {
-            position: relative;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .description {
-            margin-top: 10px;
-        }
-
-        .bar {
-            margin: 0 auto;
-            margin-top: 40px;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .bar-btn {
-            border-radius: 8px;
-            padding: 8px 12px;
-            width: 100%;
-            background-color: #e2a011;
-            transition: background-color 0.15s ease-in-out;
-            margin-bottom: 5px;
-        }
-
-        .bar-btn:hover {
-            background-color: gray;
-        }
-
-        .info-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-radius: 10px;
-            margin: 0 auto;
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-        }
-
-        /* Right Side */
-        .r-side {
-            margin-top: 10px;
-            flex: 1;
-
-        }
-
-        .product-content-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 5%;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: grey;
-            width: 100%;
-        }
-
-        .product-details {
-            flex: 1;
-        }
-
-        .product-name {
-            font-size: 30px;
-            margin-bottom: 8px;
-            color: #000000;
-
-        }
-
-        .product-price {
-            font-size: 18px;
-            color: white;
-
-        }
-
-        .add-to-cart-form {
-            display: flex;
-            align-items: center;
-
-        }
-
-        .add-to-cart-form input[type="number"] {
-            width: 60px;
-            padding: 8px;
-            margin-right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .add-to-cart-button {
-            padding: 10px 20px;
-            background-color: #e2a001;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .add-to-cart-button:hover {
-            background-color: green;
-        }
-
-        /* Media Queries */
-        @media (min-width: 768px) {
-            .bar {
-                width: 708px;
-                flex-direction: row;
-                justify-content: space-around;
-            }
-
-            .cont {
-                width: 65%;
-            }
-
-            .bar-btn {
-                padding: 12px 46px;
-                width: auto;
-                margin-bottom: 0px;
-            }
-        }
-    </style>
 
 
     <?= template_footer() ?>

@@ -115,8 +115,8 @@ $check2 = pfValidIP();
 $check3 = pfValidPaymentData($cartTotal, $pfData);
 $check4 = pfValidServerConfirmation($pfParamString, $pfHost); ?>
 
-<?php if ($check1 && $check2 && $check3 && $check4) { ?>
-    <?php require_once 'includes/process-order.inc.php'; ?>
+<?php if ($check1 && $check2 && $check4) { ?>
+
     <form id="myForm" method="post">
         <input type="hidden" name="final">
     </form>
