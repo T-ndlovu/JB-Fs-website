@@ -155,7 +155,7 @@ select {
 }
 
 .cart table .remove {
-  color: #777777;
+  color: rgba(223, 19, 19, 0.747);
   font-size: 12px;
   padding-top: 3px;
 }
