@@ -115,6 +115,9 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /*products page*/
+.input-group {
+  margin-bottom: 10px;
+}
 .category-header {
   background-image: url("images/coffee_table.webp");
   background-size: cover;

@@ -1,7 +1,5 @@
 <?php
 
-
-
 // Function to make cURL requests
 function makeCurlRequest($url, $method, $data = null, $headers = array())
 {
@@ -66,11 +64,11 @@ function setSessionData($result, $data)
 }
 
 // Requesting access token
-$accessTokenUrl = 'https://payflex-live.eu.auth0.com/oauth/token';
+$accessTokenUrl = 'https://payflex.eu.auth0.com/oauth/token';
 $accessTokenData = array(
     'client_id' => 'your_client_id', // Replace with your client ID
     'client_secret' => 'your_client_secret', // Replace with your client secret
-    'audience' => 'https://auth-production.payflex.co.za',
+    'audience' => 'https://auth-dev.payflex.co.za',
     'grant_type' => 'client_credentials'
 );
 $accessTokenResponse = makeCurlRequest($accessTokenUrl, 'POST', $accessTokenData);

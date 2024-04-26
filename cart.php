@@ -157,9 +157,11 @@ if ($products_in_cart) {
             <div class="buttons">
                 <input type="submit" value="Update" name="update">
             </div>
-    </div>
-    <div class="price-info">
         </form>
+    </div>
+
+
+    <div class="price-info">
         <form action="index.php?page=placeorder" method="post">
             <input type="hidden" name="subtotal" value="<?= $subtotal ?>">
             <input type="hidden" name="product_id[]" value="<?= $product['ProductID'] ?>">
@@ -182,6 +184,9 @@ if ($products_in_cart) {
     <?php if (!isset($_SESSION['user_id'])) { ?>
         <div class="register-form">
             <h2>Create an account.</h2>
+            <?php
+            check_register_errors();
+            ?>
             <form action="includes/register.inc.php" method="post" class="register">
                 <div class="form-group">
                     <h3>Your Personal Details</h3>
@@ -337,9 +342,7 @@ if ($products_in_cart) {
                 </div>
                 <button type="submit" class="btn-primary">Submit</button>
             </form>
-            <?php
-            check_register_errors();
-            ?>
+
         </div>
     <?php } ?>
 

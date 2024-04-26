@@ -130,16 +130,17 @@
 
 .menu {
   display: none;
-  /*z-index: 1000;
-  /* flex-direction: row;
-  list-style-type: none;
-  margin: 0;
-  padding: 0; */
 }
 
 .slider-h1 {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 3.5rem;
+  font-weight: 400;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.slider-p {
+  font-size: 1.2rem;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .menu > li {

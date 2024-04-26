@@ -89,7 +89,7 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <img src="public/images/couch.jpg" style="width: 100%; height: 800px" />
+            <img src="public/images/couch.jpg" style="width: 100%; height: 800px; filter:brightness(60%);" />
             <div class="text">
                 <h1 class="slider-h1">Comfortability</h1>
                 <p class="slider-p">Sink into blissful comfort with our cloud-like couch.</p>
@@ -100,7 +100,7 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <img src="public/images/wall_painting.jpg" style="width: 100%; height: 800px" />
+            <img src="public/images/wall_painting.jpg" style="width: 100%; height: 800px; filter:brightness(60%);" />
             <div class="text">
                 <h1 class="slider-h1">Perfect Finishing Touch</h1>
                 <p class="slider-p">Art infuses your home with warmth, transforming it from a space into a haven.</p>
@@ -111,7 +111,7 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
-            <img src="public/images/coffee_table.webp" style="width: 100%; height: 800px" />
+            <img src="public/images/coffee_table.webp" style="width: 100%; height: 800px; filter:brightness(60%);" />
             <div class="text">
                 <h1 class="slider-h1">Small set piece</h1>
                 <p class="slider-p">Its more than just a part of the home.</p>

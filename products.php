@@ -159,7 +159,7 @@ $total_products = $total_products_stmt->fetchColumn();
                     <?php
                 }
             } else {
-                echo "<div class='col-md-12'><p>No Record Found</p></div>";
+                echo "<div class='col-md-12'><p>Product Does not exist</p></div>";
             }
             ?>
         </div>
