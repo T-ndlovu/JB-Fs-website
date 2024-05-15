@@ -45,8 +45,8 @@ if ($result !== null) {
 
         'merchant_id' => '10033404',
         'merchant_key' => 'mfur1f44r6s4n',
-        'return_url' => 'https://a9b2-102-220-77-186.ngrok-free.app/JB-Fs-website/index.php?page=cart',
-        'notify_url' => 'https://a9b2-102-220-77-186.ngrok-free.app/JB-Fs-website/includes/payfast-notify.inc.php',
+        'return_url' => 'https://851f-102-220-77-106.ngrok-free.app/JB-Fs-website/index.php?page=placeorder',
+        'notify_url' => 'https://851f-102-220-77-106.ngrok-free.app/JB-Fs-website/includes/payfast-notify.inc.php',
 
 
         // Buyer details
@@ -60,7 +60,9 @@ if ($result !== null) {
 
         'm_payment_id' => $sessionId, //Unique payment ID to pass through to notify_url
         'amount' => number_format(sprintf('%.2f', $cartTotal), 2, '.', ''),
-        'item_name' => 'hhh'
+        'item_name' => 'hhh',
+
+
     );
 
     $signature = generateSignature($data);
@@ -73,7 +75,7 @@ if ($result !== null) {
     foreach ($data as $name => $value) {
         $htmlForm .= '<input name="' . $name . '" type="hidden" value=\'' . $value . '\' />';
     }
-    $htmlForm .= '<input type="submit" value="Payfast paynow" /></form>';
+    $htmlForm .= '<input type="submit" value="Payfast"/></form>';
     echo $htmlForm;
 }
 

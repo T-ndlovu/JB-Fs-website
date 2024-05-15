@@ -30,7 +30,7 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
                 your space looking stylish and feeling functional.
             </p>
             <a class="bg-black rounded-full text-white text-center py-2 px-3" href="index.php?page=products">
-                Order now
+                Order Now
             </a>
         </div>
     </div>
@@ -42,7 +42,7 @@ $productImages = $productImageStmt->fetchAll(PDO::FETCH_ASSOC);
             Explore our range of products.
         </h1>
         <div class="items-center space-y-5 md:space-y-0 md:space-x-5 md:flex md:justify-center">
-            <a href="#" class="aspect-4/5 max-w-64 mb-2 relative">
+            <a href="#" class="aspect-4/5 max-w-96 mb-2 relative">
                 <div class="overflow-hidden">
                     <img src="https://rb.gy/kvy6j3" alt="Image of a blue sofa"
                         class="w-full h-full object-cover hover:scale-110 transition duration-150 ease-linear" />
@@ -140,7 +140,7 @@ $displayedProductIDs = []; // Initialize the array to track displayed product ID
 
 <section class="p-20w-full max-w-screen-1xl mx-auto">
     <h1 class="text-4xl text-center">Our Top Picks</h1>
-    <div class="flex flex-wrap justify-center mt-4 space-x-4">
+    <div class="flex flex-wrap justify-center mt-4 md:space-x-4">
         <?php
         $numProductsDisplayed = 0; // Variable to track the number of displayed products
         for ($i = count($products) - 1; $i >= 0; $i--) {
@@ -164,7 +164,7 @@ $displayedProductIDs = []; // Initialize the array to track displayed product ID
                 if ($productImage !== null) {
                     ?>
                     <a href="index.php?page=product&id=<?= $product['ProductID'] ?>" class="mb-4">
-                        <div class="space-y-1">
+                        <div class="space-y-1 top-picks-image">
                             <div class="relative overflow-hidden">
                                 <img src="<?= $productImage['ImageURL'] ?>" width="200" height="200" alt="<?= $product['Name'] ?>">
                             </div>

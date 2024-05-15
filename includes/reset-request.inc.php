@@ -7,7 +7,7 @@ if (isset($_POST['reset-submit'])) {
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
 
-    $url = "Final%20zupi/index.php?page=create-new-password&selector=" . $selector . "&validator=" . bin2hex($token);//enter my directory
+    $url = "https://615c-102-218-193-192.ngrok-free.app/index.php?page=create-new-password&selector=" . $selector . "&validator=" . bin2hex($token);//enter my directory
     $expire = date("U") + 1000;
 
     require_once "dbh.inc.php";

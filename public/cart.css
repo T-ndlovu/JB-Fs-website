@@ -181,22 +181,43 @@ select {
   border-radius: 5px;
 }
 
+.checkout-button {
+  margin-top: 4px;
+  text-align: right;
+}
+
+.checkout-button input[type="submit"] {
+  font-weight: bold;
+  border: 1px solid #e2a011;
+  background: white;
+  color: #e2a011;
+  transition: background-color 0.2s ease-in-out, color 0.16s ease-in-out,
+    border 0.2s ease-in-out;
+}
+
+.checkout-button input[type="submit"]:hover {
+  font-weight: bold;
+  border: 1px solid green;
+  background: green;
+  color: white;
+}
+
 .cart .buttons {
   text-align: right;
-  padding-bottom: 40px;
 }
 
 .cart .buttons input[type="submit"] {
   margin-left: 5px;
   padding: 12px 20px;
   border: 0;
-  /* background: #4e5c70; */
+
   background: #e2a011;
   color: #ffffff;
   font-size: 14px;
-  font-weight: bold;
+
   cursor: pointer;
   border-radius: 5px;
+  width: 7.42rem;
 }
 
 .cart .buttons input[type="submit"]:hover {

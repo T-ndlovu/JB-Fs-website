@@ -158,26 +158,20 @@ if ($products_in_cart) {
                 <input type="submit" value="Update" name="update">
             </div>
         </form>
-    </div>
 
-
-    <div class="price-info">
         <form action="index.php?page=placeorder" method="post">
             <input type="hidden" name="subtotal" value="<?= $subtotal ?>">
             <input type="hidden" name="product_id[]" value="<?= $product['ProductID'] ?>">
             <input type="hidden" name="product_name[]" value="<?= $product['Name'] ?>">
             <input type="hidden" name="product_price[]" value="<?= $product['Price'] ?>">
-
-            <div class="buttons">
+            <div class="checkout-button">
                 <?php if (isset($_SESSION['user_id'])) { ?>
                     <input type="submit" value="Check Out">
                 <?php } ?>
             </div>
         </form>
     </div>
-
     <?php require_once 'includes/process-order.inc.php'; ?>
-
 
 
 
@@ -360,7 +354,10 @@ if ($products_in_cart) {
             <div class="pass-link"><a href="index.php?page=forgot-password">Forgot password?</a></div>
             <button type="submit" class="btn-primary">Submit</button>
             <div class="register-link">
-                Dont Have Account? <a href="#">register now</a>
+                <?php if (!isset($_SESSION['user_id'])) { ?>
+                    Dont Have Account?<br> ← Create Account
+                <?php } ?>
+
             </div>
         </form>
         <?php

@@ -275,3 +275,22 @@ input[type="range"]::-webkit-slider-thumb {
   width: 100%;
   max-width: 600px;
 }
+
+.pagination-buttons {
+  margin-top: 4rem;
+  width: 6.5rem;
+  text-align: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-weight: bold;
+  background: black;
+  color: white;
+  transition: background-color 0.2s ease-in-out, color 0.16s ease-in-out,
+    border 0.2s ease-in-out;
+}
+
+.pagination-buttons:hover {
+  /* background: #e2a011; */
+  background: gray;
+  color: white;
+}

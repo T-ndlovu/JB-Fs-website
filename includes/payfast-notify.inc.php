@@ -115,18 +115,10 @@ $check2 = pfValidIP();
 $check3 = pfValidPaymentData($cartTotal, $pfData);
 $check4 = pfValidServerConfirmation($pfParamString, $pfHost); ?>
 
-<?php if ($check1 && $check2 && $check4) { ?>
+<?php if ($check1 && $check2 && $check4) {
+    require_once "../cart.php";
+    require_once 'includes/process-order.inc.php';
 
-    <form id="myForm" method="post">
-        <input type="hidden" name="final">
-    </form>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('myForm').submit();
-        });
-    </script>
-    <?php
 } else {
     //
 }

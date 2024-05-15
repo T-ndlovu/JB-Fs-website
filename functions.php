@@ -26,10 +26,11 @@ function template_header($title)
         <a href="index.php" class=""><h1 class="text-custom-orange text-2xl">JB Furniture House</h1></a>
         <div class="hidden space-x-6 lg:flex">
             <a href="index.php?page=category_template&categoryid=3" class="">Living Room</a>
+            <a href="index.php?page=category_template&categoryid=9" class="">Ornaments</a>
             <a href="index.php?page=category_template&categoryid=2" class="">Dining</a>
             <a href="index.php?page=category_template&categoryid=5" class="">Bedroom</a>
-            <a href="index.php?page=category_template&categoryid=6" class="">Office</a>
-            <a href="#" class="">Decor</a>
+            <a href="index.php?page=category_template&categoryid=7" class="">Rugs</a>
+           
             <a href="index.php?page=products" style="color:red; font-weight: bold;">On Sale</a>
         </div>
     </div>
@@ -50,7 +51,7 @@ function template_header($title)
       </a>
 EOT;
 
-    // Output the number of items in the cart
+
     echo '<a href="index.php?page=cart">';
     echo '<div style="display: flex; align-items: center;">';
     echo '<i class="fas fa-shopping-cart"></i>';
@@ -63,7 +64,7 @@ EOT;
     echo '</div>';
     echo '</a>';
 
-    // Continue with HTML markup
+
     echo <<<EOT
         <input id="menu-toggle" type="checkbox" />
         <label class="menu-button-container" for="menu-toggle">
@@ -72,25 +73,26 @@ EOT;
         <ul class="menu">
            
             <li>
-                <a href="#" class="">Living Room</a>
+                <a href="index.php?page=category_template&categoryid=3" class="">Living Room</a>
             </li>
             <li>
-                <a href="#" class="">Dining</a>
+            <a href="index.php?page=category_template&categoryid=9" class="">Ornaments</a>
             </li>
             <li>
-                <a href="#" class="">Bedroom</a>
+                <a href="index.php?page=category_template&categoryid=2" class="">Dining</a>
             </li>
             <li>
-                <a href="#" class="">Office</a>
+                <a href="index.php?page=category_template&categoryid=5" class="">Bedroom</a>
             </li>
             <li>
-                <a href="#" class="">Decor</a>
+                <a href="index.php?page=category_template&categoryid=7" class="">Rugs</a>
             </li>
+           
             <li>
                 <a href="index.php?page=products" class="">On Sale</a>
             </li>
             <li>
-                <a href="#" class="">Contact Us</a>
+                <a href="mailto:#" class="">Contact Us</a>
             </li>
               
         </ul>
@@ -108,7 +110,7 @@ function template_footer()
 <footer>
     <div class="footer-content">
         <div class="footer-section about">
-            <h3>JB Furniture House</h3>
+        <a href="index.php"> <h3>JB Furniture House</h3></a>
             <p>We supply modern home, office, and kitchen furniture at the best price in town. Quality guaranteed.</p>
               
             <div class="socials-links space-x-4">
@@ -141,8 +143,9 @@ function template_footer()
         <div class="footer-section links">
             <h3>Customer Support</h3>
             <ul>
-                <li><a href="index.php?page=cart">Sign in</a></li>
-                <li><a href="index.php?page=cart">Create account</a></li>
+                <li><a href="index.php?page=cart">Sign In</a></li>
+                <li><a href="index.php?page=cart">Create Account</a></li>
+                <li><a href="mailto:#" class="">Contact Us</a> </li>
             </ul>
         </div>
         

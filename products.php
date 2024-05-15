@@ -164,23 +164,23 @@ $total_products = $total_products_stmt->fetchColumn();
             ?>
         </div>
     </div>
+
+    <!-- Pagination buttons -->
+    <div>
+        <?php if ($current_page > 1 && count($products) > 0): ?>
+            <a
+                href="index.php?page=products&p=<?= $current_page - 1 ?>&start_price=<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '100' ?>&end_price=<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '900' ?>">
+                <div class="pagination-buttons">Prev</div>
+            </a>
+        <?php endif; ?>
+
+        <?php if (count($products) > 0 && count($products) == $num_products_on_each_page): ?>
+            <a
+                href="index.php?page=products&p=<?= $current_page + 1 ?>&start_price=<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '100' ?>&end_price=<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '900' ?>">
+                <div class="pagination-buttons">Next</div>
+            </a>
+        <?php endif; ?>
+    </div>
 </section>
-
-
-
-<!-- Pagination buttons -->
-<div class="buttons">
-    <?php if ($current_page > 1 && count($products) > 0): ?>
-        <a
-            href="index.php?page=products&p=<?= $current_page - 1 ?>&start_price=<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '100' ?>&end_price=<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '900' ?>">Prev</a>
-    <?php endif; ?>
-
-    <?php if (count($products) > 0 && count($products) == $num_products_on_each_page): ?>
-        <a
-            href="index.php?page=products&p=<?= $current_page + 1 ?>&start_price=<?= isset($_GET['start_price']) ? sanitize($_GET['start_price']) : '100' ?>&end_price=<?= isset($_GET['end_price']) ? sanitize($_GET['end_price']) : '900' ?>">Next</a>
-    <?php endif; ?>
-</div>
-
-
 
 <?= template_footer() ?>

@@ -20,7 +20,7 @@
         <?php
         if (isset($_GET['reset'])) {
             if ($_GET['reset'] == "success") {
-                echo "<h3> Check your email</h3>";
+                echo "<h3 class='green-text'> Check your email</h3>";
             }
         }
         ?>
@@ -30,7 +30,17 @@
             <a href="index.php?page=cart" class="back-link">← BACK</a>
         </div>
     </div>
+    <style>
+        .green-text {
+            color: green;
+            font-weight: bold;
+            background-color: #dff0d8;
+            padding: 10px;
+            border: 1px solid #d6e9c6;
+            border-radius: 5px;
 
+        }
+    </style>
 </section>
 
 
