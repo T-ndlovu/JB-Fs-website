@@ -344,6 +344,7 @@ if ($products_in_cart) {
 
     <div class="login-form">
         <h2>Login</h2>
+
         <form action="includes/login.inc.php" method="post" class="login">
             <div class="form-field">
                 <input type="text" placeholder="Email Address" name="email" required class="form-control" />
@@ -355,14 +356,18 @@ if ($products_in_cart) {
             <button type="submit" class="btn-primary">Submit</button>
             <div class="register-link">
                 <?php if (!isset($_SESSION['user_id'])) { ?>
-                    Dont Have Account?<br> ← Create Account
+                    <h3 class="blue-text-extra">Dont Have Account?<br> ← Create Account</h3>
                 <?php } ?>
 
             </div>
         </form>
+
+        <?php ?>
         <?php
+        output_username();
         check_login_errors();
         ?>
+
     </div>
 </section>
 

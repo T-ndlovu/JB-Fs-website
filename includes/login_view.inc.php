@@ -5,9 +5,7 @@ declare(strict_types=1);
 function output_username()
 {
     if (isset($_SESSION['user_id'])) {
-        echo '<Welcome back: ' . $_SESSION['user_firstname'] . '';//output users name whose logged in
-    } else {
-        echo 'Signup / Login';
+        echo 'Welcome back: ' . $_SESSION['user_firstname'] . '';//output users name whose logged in
     }
 }
 
@@ -26,18 +24,8 @@ function check_login_errors()
     } elseif (isset($_GET['login']) && $_GET['login'] === 'success') {
         echo '<br>';
         echo '<h3 class="green-text">Login Success</h3>';
+
     }
 }
 
 ?>
-<style>
-    .green-text {
-        color: green;
-        font-weight: bold;
-        background-color: #dff0d8;
-        padding: 10px;
-        border: 1px solid #d6e9c6;
-        border-radius: 5px;
-
-    }
-</style>

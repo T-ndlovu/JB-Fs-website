@@ -47,3 +47,12 @@ function openinfo(evt, Name) {
   document.getElementById(Name).style.display = "block";
   evt.currentTarget.className += " activebar";
 }
+
+// placeorder
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}

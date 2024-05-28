@@ -21,14 +21,3 @@ function check_register_errors()
     }
 }
 ?>
-<style>
-    .green-text {
-        color: green;
-        font-weight: bold;
-        background-color: #dff0d8;
-        padding: 10px;
-        border: 1px solid #d6e9c6;
-        border-radius: 5px;
-
-    }
-</style>
